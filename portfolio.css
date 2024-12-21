@@ -1,0 +1,301 @@
+/* Body styles to prevent scrolling */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Use fixed height instead of min-height */
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Prevent all scrolling */
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Background image styling */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('images/background2.jpeg'); */
+    background-color: black;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: zoomIn 5s ease-out forwards;
+}
+/* Keyframes for background zoom */
+@keyframes zoomIn {
+    0% {
+        background-size: 100%; /* Initial size */
+    }
+    100% {
+        background-size: 120%; /* Final zoomed-in size */
+    }
+}
+h3,h2,h4 {
+    /* font-size: 2rem; */
+    color: #333;
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    margin: 1rem 0;
+    color: white!important;
+    
+}
+
+hr{
+    color: black;
+    width: 90rem;
+    
+}
+
+.sub{
+    font-size: 1.5em;
+}
+
+/* Starting positions */
+.slide-in {
+    transform: translateX(-100%); /* Slide in from left */
+}
+
+.slide-in-right {
+    transform: translateX(100%); /* Slide in from right */
+}
+
+.slide-in-bottom {
+    transform: translateY(100%); /* Slide in from bottom */
+}
+
+.hero{
+    text-align: left;
+}
+
+/* Visible state */
+.visible {
+    transform: translateX(0) translateY(0); /* Reset to default position */
+    opacity: 1; /* Fade in */
+}
+
+.activee{
+    opacity: .6;
+}
+
+
+.navbar {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar .nav-link {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    opacity: .6;
+}
+
+
+
+
+/* Portfolio page */
+/* Portfolio specific styles */
+/* Main content container to ensure proper centering */
+.portfolio-section {
+    flex: 1;
+    width: 100%; /* Changed from 90% to use full width on mobile */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem; /* Reduced padding for mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Reduced gap for mobile */
+}
+.portfolio-heading {
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column on mobile */
+    gap: 1rem; /* Reduced gap for mobile */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.portfolio-item {
+    position: relative;
+    aspect-ratio: 17/12;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.shaper{
+    width: 80rem;
+    height: 30rem;
+    border: 1px solid whitesmoke;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0; /* Position the text at the bottom */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    width: 100%; /* Make the text span the width of the image */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    padding: 10px 0; /* Add padding around the text */
+    opacity: 1; /* Hide text by default */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+
+/* Add these animation styles to your existing CSS */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start slightly below final position */
+    margin-bottom: 1rem; /* Add space between items on mobile */
+}
+
+.portfolio-item.animate-in {
+    animation: portfolioFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes portfolioFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay each item's animation */
+.portfolio-item:nth-child(1) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.6s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* Keep your existing portfolio styles and modify the image sizing */
+.shaper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+  /* New Navigation Button Styles */
+  .nav-btn {
+    position: fixed;
+    bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Media query for tablets (min-width: 768px) */
+@media (min-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet and up */
+        gap: 1.5rem;
+    }
+
+    .portfolio-section {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .overlay-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query for larger screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .portfolio-section {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .portfolio-grid {
+        gap: 2rem;
+    }
+
+    .portfolio-item {
+        aspect-ratio: 17/12; /* Return to original aspect ratio on desktop */
+    }
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Added more opacity for better visibility while scrolling */
+}

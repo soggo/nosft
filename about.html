@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,500&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="/images/brand.png" alt="Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto gap-5"> <!-- Center links -->
+                            <li class="nav-item">
+                                <a class="nav-link activee" href="/portfolio.html">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html?show=contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <hr> -->
+
+    <div class="about-container">
+        <div class="image-half"></div>
+        <div class="content-half">
+            <h1 class="about-title">About</h1>
+            <p class="about-text">
+                Nosa Asemota is a Nigerian documentary photographer and storyteller, currently serving as the official photographer to the President of Nigeria. With a background in guidance and counseling, Nosa brings a unique, empathetic approach to his work, capturing authentic narratives that reveal the humanity behind his subjects. As the founder of Lens for Good, an initiative dedicated to empowering young Nigerian creatives, he mentors emerging storytellers to use visual media as a tool for social impact. Nosa's work is driven by a commitment to amplify African voices and bridge cultural divides, with a vision of inspiring change through powerful, relatable storytelling.
+            </p>
+            <button class="about-button">Get in Touch</button>
+        </div>
+    </div>
+
+    <div class="contact-panel">
+        <button class="close-button" aria-label="Close contact panel">×</button>
+        <div class="contact-content">
+            <h2 class="contact-title">Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>nosa@nosasemota.com</span>
+                </div>
+                <!-- <div class="contact-item">
+                    <i>📱</i>
+                    <span>+234 123 456 7890</span>
+                </div> -->
+                <div class="contact-item">
+                <i> <img class="socials" src="images/instagram-brands-solid.svg" alt=""> </i>
+                 <span> @nosaasemota</span> 
+                </div>
+
+                <div class="contact-item">
+                    <i> <img class="socials" src="images/facebook-brands-solid.svg" alt=""> </i>
+                     <span> @nosaasemota</span> 
+                    </div>
+
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Abuja, Nigeria</span>
+                </div>
+            </div>
+            <button class="back-button">Back to About</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get all necessary elements
+        const contactBtn = document.querySelector('.about-button');
+        const contactPanel = document.querySelector('.contact-panel');
+        const backBtn = document.querySelector('.back-button');
+        const closeBtn = document.querySelector('.close-button');
+        const contactLink = document.querySelector('a[href="about.html?show=contact"]');
+
+        // Function to show contact panel
+        const showContactPanel = () => {
+            contactPanel.classList.add('active');
+            // Prevent page scrolling when panel is active
+            document.body.style.overflow = 'hidden';
+        };
+
+        // Function to hide contact panel
+        const hideContactPanel = () => {
+            contactPanel.classList.remove('active');
+            // Restore page scrolling
+            document.body.style.overflow = '';
+        };
+
+        // Check URL parameters when page loads
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('show') === 'contact') {
+                showContactPanel();
+            }
+        });
+
+        // Handle "Get in Touch" button click
+        contactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showContactPanel();
+            window.history.pushState({}, '', '?show=contact');
+        });
+
+        // Handle contact link in navigation
+        contactLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showContactPanel();
+            window.history.pushState({}, '', '?show=contact');
+        });
+
+        // Handle back button click
+        backBtn.addEventListener('click', () => {
+            hideContactPanel();
+            window.history.pushState({}, '', 'about.html');
+        });
+
+        // Handle close button click
+        closeBtn.addEventListener('click', () => {
+            hideContactPanel();
+            window.history.pushState({}, '', 'about.html');
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('show') === 'contact') {
+                showContactPanel();
+            } else {
+                hideContactPanel();
+            }
+        });
+        
+    </script>
+</body>
+</html>
