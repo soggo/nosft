@@ -92,56 +92,56 @@
         const contactPanel = document.querySelector('.contact-panel');
         const backBtn = document.querySelector('.back-button');
         const closeBtn = document.querySelector('.close-button');
-        const contactLink = document.querySelector('a[href="about.html?show=contact"]');
-
+        const contactLink = document.querySelector('a[href="?show=contact"]');
+    
         // Function to show contact panel
         const showContactPanel = () => {
             contactPanel.classList.add('active');
             // Prevent page scrolling when panel is active
             document.body.style.overflow = 'hidden';
         };
-
+    
         // Function to hide contact panel
         const hideContactPanel = () => {
             contactPanel.classList.remove('active');
             // Restore page scrolling
             document.body.style.overflow = '';
         };
-
+    
         // Check URL parameters when page loads
-        window.addEventListener('load', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('show') === 'contact') {
                 showContactPanel();
             }
         });
-
+    
         // Handle "Get in Touch" button click
-        contactBtn.addEventListener('click', (e) => {
+        contactBtn?.addEventListener('click', (e) => {
             e.preventDefault();
             showContactPanel();
-            window.history.pushState({}, '', '?show=contact');
+            history.pushState({}, '', '?show=contact');
         });
-
+    
         // Handle contact link in navigation
-        contactLink.addEventListener('click', (e) => {
+        contactLink?.addEventListener('click', (e) => {
             e.preventDefault();
             showContactPanel();
-            window.history.pushState({}, '', '?show=contact');
+            history.pushState({}, '', '?show=contact');
         });
-
+    
         // Handle back button click
-        backBtn.addEventListener('click', () => {
+        backBtn?.addEventListener('click', () => {
             hideContactPanel();
-            window.history.pushState({}, '', 'about.html');
+            history.pushState({}, '', 'about.html');
         });
-
+    
         // Handle close button click
-        closeBtn.addEventListener('click', () => {
+        closeBtn?.addEventListener('click', () => {
             hideContactPanel();
-            window.history.pushState({}, '', 'about.html');
+            history.pushState({}, '', 'about.html');
         });
-
+    
         // Handle browser back/forward buttons
         window.addEventListener('popstate', () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -151,7 +151,7 @@
                 hideContactPanel();
             }
         });
-        
     </script>
+    
 </body>
 </html>
