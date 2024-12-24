@@ -234,7 +234,7 @@
         .about-text{
              font-size: 0.8em;
              /* text-align: left; */
-             color: purple ;
+             color: black ;
             
             }
         /* .navbar-collapse {
@@ -303,8 +303,8 @@
 
     .about-button, .back-button {
         width: 100%;
-        font-size: 1rem;
-        max-width: 10rem;
+        font-size: .8rem;
+        max-width: 9rem;
     }
     
 }
