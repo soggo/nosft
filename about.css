@@ -234,7 +234,7 @@
         .about-text{
              font-size: 0.8em;
              /* text-align: left; */
-             color: green;
+             color: purple ;
             
             }
         /* .navbar-collapse {
@@ -270,7 +270,7 @@
     .content-half {
         width: 100%;
         margin-left: 0;
-        padding: 1rem;
+        padding: .8rem;
         min-height: 50vh;
     }
 
