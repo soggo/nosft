@@ -230,7 +230,12 @@
         .navbar-brand {
             margin-right: 0;
         }
-    
+            
+        .about-text{
+             font-size: 0.9em;
+             ;
+            
+            }
         /* .navbar-collapse {
             position: fixed;
             top: 100%;
@@ -264,13 +269,10 @@
     .content-half {
         width: 100%;
         margin-left: 0;
-        padding: 2rem;
-        min-height: 60vh;
+        padding: 1rem;
+        min-height: 50vh;
     }
 
-    .about-text {
-        font-size: 1.2rem;
-    }
 
     /* Contact panel mobile fixes */
     .contact-panel {
