@@ -192,7 +192,10 @@ hr {
         background-position: left center;
     }
 
-     
+    .hero{
+        /* outline: 1px solid black; */
+        text-align: left;
+    } 
 
     @keyframes zoomIn {
         0% {
