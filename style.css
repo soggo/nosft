@@ -88,7 +88,7 @@ hr {
     text-decoration: none; /* Remove underline */
     border-radius: 5px; /* Rounded corners */
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     transition: all 0.3s ease-in-out; /* Smooth transition effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -195,7 +195,7 @@ hr {
     .hero{
         /* outline: 1px solid black; */
         text-align: left;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
         font-weight: bolder;
     } 
 
@@ -245,6 +245,7 @@ hr {
         max-width: 15rem;
     }
 
+   
     h2 {
         font-size: clamp(1.5rem, 4vw, 2rem);
     }
