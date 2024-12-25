@@ -4,10 +4,10 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+     /* margin-top: -25rem; */
 }
 
 .shap {
-    margin-top: 3rem;
     max-width: 60%;
     opacity: 0;
     transform: translateY(20px);
@@ -90,7 +90,7 @@
     /* background-color:  !important; */
     border: none;
     box-shadow: none;
-    position: fixed;
+    /* position: fixed; */
     z-index: 1000;
 }
 
@@ -189,17 +189,11 @@
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
 
-    .navbar {
-        position: fixed;
-        width: 100%;
-        /* top: 0; */
-        z-index: 2000;
-        background-color: rgba(255, 255, 255, 1) !important;
+    .navbar .nav-link{
+        font-size: 1rem;
     }
-
-    .pix{
-        margin-top: 2.5rem;
-    }
+  
+    
 }
 /* Video Grid Layout */
 .video-grid {
