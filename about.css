@@ -73,6 +73,10 @@
     font-family: "Merriweather";
 }
 
+.activee{
+    opacity: .6;
+}
+
 .image-half {
     position: absolute;
     top: 0;
@@ -146,6 +150,11 @@
     width: 100%;
 }
 
+.contact-content a{
+   text-decoration: none;
+    color: black;
+   /* font-weight: 310;  */
+}
 .contact-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
