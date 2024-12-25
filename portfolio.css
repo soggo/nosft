@@ -262,9 +262,9 @@ hr{
 
 
 /* Media query for tablets (min-width: 768px) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet and up */
+        grid-template-columns: repeat(1, 1fr); /* Two columns on tablet and up */
         gap: 1.5rem;
     }
 
@@ -276,10 +276,16 @@ hr{
     .overlay-text {
         font-size: 1.2rem;
     }
+
+    .navbar-toggler-icon{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 255%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        outline: 4px white solid;
+    }
 }
 
+
 /* Media query for larger screens (min-width: 1024px) */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     .portfolio-section {
         width: 90%;
         padding: 2rem;
@@ -292,10 +298,11 @@ hr{
     .portfolio-item {
         aspect-ratio: 17/12; /* Return to original aspect ratio on desktop */
     }
-}
+} */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.8) !important; /* Added more opacity for better visibility while scrolling */
 }
+
