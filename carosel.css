@@ -20,6 +20,7 @@
     transform: translateY(0);
 }
 
+
 /* Carousel Styles */
 .carousel-container {
     position: fixed;
@@ -36,6 +37,21 @@
 
 .carousel-container.active {
     display: flex;
+    z-index: 1000;;
+}
+
+/* Add this to your existing CSS */
+.carousel-container:not(:empty) ~ .sticky-top,
+.carousel-container.active ~ .sticky-top {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* When carousel is closed, restore header */
+.carousel-container:empty ~ .sticky-top {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .carousel-content {
@@ -48,6 +64,7 @@
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
+    z-index: 1000;
 }
 
 .carousel-btn {
