@@ -195,7 +195,13 @@ hr {
     .hero{
         /* outline: 1px solid black; */
         text-align: left;
+        padding-bottom: 4rem;
+        font-weight: bolder;
     } 
+
+    .rtextblock{
+        font-size: 0.8rem;
+    }
 
     @keyframes zoomIn {
         0% {
