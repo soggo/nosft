@@ -188,7 +188,11 @@ hr {
 @media (max-width: 768px) {
     body::before {
         height: 100vh;
+        background-image: url('images/background2.jpeg');
+        background-position: left center;
     }
+
+     
 
     @keyframes zoomIn {
         0% {
