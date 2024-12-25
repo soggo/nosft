@@ -8,7 +8,7 @@ body {
     overflow: hidden; /* Prevent all scrolling */
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
     overflow-y: auto; /* Allow vertical scrolling */
 }
 
@@ -19,10 +19,10 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     /* background-image: url('images/background2.jpeg'); */
     background-color: black;
-    background-size: 100%;
+    /* background-size: 100%; */
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
