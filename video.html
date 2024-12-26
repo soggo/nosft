@@ -44,7 +44,8 @@
     <div class="video-grid">
         <div class="video-container">
             <video 
-                src="images/vid.mp4"
+                poster="images/1.png"
+                src="images/1.mp4"
                 controls
                 preload="metadata"
                 playsinline>
@@ -54,7 +55,8 @@
 
         <div class="video-container">
             <video 
-                src="images/vid.mp4"
+            poster="images/2.png"
+                src="images/2.mp4"
                 controls
                 preload="metadata"
                 playsinline>
@@ -64,24 +66,67 @@
         
         <div class="video-container">
             <video 
-                src="images/vid.mp4"
+            poster="images/3.png"
+                src="images/3.mp4"
                 controls
                 preload="metadata"
                 playsinline>
                 Your browser does not support the video tag.
             </video>
         </div>
-         <!-- Updated button markup with icons -->
+
+        <div class="video-container">
+            <video 
+            poster="images/4.png"
+                src="images/4.mp4"
+                controls
+                preload="metadata"
+                poster="/images/1.jpeg"
+                playsinline>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-container">
+            <video 
+            poster="images/5.png"
+                src="images/5.mp4"
+                controls
+                preload="metadata"
+                playsinline>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-container">
+            <video 
+            poster="images/6.png"
+                src="images/6.mp4"
+                controls
+                preload="metadata"
+                playsinline>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-container">
+            <video 
+            poster="images/7.png"
+                src="images/7.mp4"
+                controls
+                preload="metadata"
+                playsinline>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+   
     <button id="toTopBtn" class="navi-btn"><span>↑</span></button>
     <button id="backBtn" class="navi-btn"><span>←</span></button>
     
     </div>
     
     <style>
-    /* 
-    Our base styles establish a clean foundation.
-    We use CSS custom properties (variables) for consistent spacing and sizing.
-    */
+ 
     :root {
         --max-video-width: 800px;
         --spacing: 2rem;
@@ -90,16 +135,11 @@
 
     body {
         margin: 0;
-        /* padding: var(--spacing); */
-        min-height: 100vh;
-        /* background-color: #f5f5f5; */
+      
     }
 
-    /* 
-    The video grid creates a vertical layout with consistent spacing.
-    We center everything and maintain a maximum width for optimal viewing.
-    */
     .video-grid {
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: var(--spacing);
@@ -108,39 +148,43 @@
         padding: 1rem;
     }
 
-    /* 
-    Each video container provides a consistent frame for the video.
-    We use overflow hidden to maintain the border radius with the video element.
-    */
+ 
     .video-container {
-        width: 100%;
+        display: flex;
+        align-self: center;
+        width: 70rem;
         background: #000;
         border-radius: var(--border-radius);
         overflow: hidden;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* 
-    The video element itself is styled to fill its container while maintaining aspect ratio.
-    We use display: block to prevent unwanted spacing issues.
-    */
+   
     .video-container video {
         width: 100%;
-        aspect-ratio: 16/9;
+        /* aspect-ratio: 16/9; */
         display: block;
         object-fit: contain;
         background: #000;
     }
 
-    /* 
-    Responsive adjustments ensure a good experience on smaller screens.
-    We adjust padding and maintain full width while keeping videos properly sized.
-    */
-    @media (max-width: 850px) {
+ 
+    @media (max-width: 1280px) {
         .video-grid {
-            max-width: 100%;
             padding: 0.5rem;
         }
+
+ 
+    .video-container {
+        /* display: flex; */
+        /* align-self: center; */
+        max-width: 80%;
+        background: #000;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
         
         :root {
             --spacing: 1rem;

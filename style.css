@@ -74,6 +74,11 @@ hr {
     font-size: 1.5em;
 }
 
+.hero{
+    text-align: left;
+    padding-bottom: 5rem;
+    width: 60%;
+}
 /* Animation classes */
 .slide-in, .slide-in-right, .slide-in-bottom {
     opacity: 0;
@@ -185,7 +190,7 @@ hr {
 
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     body::before {
         height: 100vh;
         background-image: url('images/background2.jpeg');
@@ -197,6 +202,8 @@ hr {
         text-align: left;
         padding-bottom: 3rem;
         font-weight: bolder;
+        /* font-size: 1.9rem; */
+        width: 22.8rem;
     } 
 
     .rtextblock{
@@ -223,7 +230,10 @@ hr {
         max-width: none;
         margin: 0.5rem auto;
     }
-
+    .navbar-brand{
+        /* border: 3px solid green; */
+        width: 40%;
+    }
     .navbar-collapse {
         background-color: rgba(0, 0, 0, 0.8);
          padding: 1rem; 

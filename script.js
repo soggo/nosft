@@ -1,3 +1,4 @@
+// Initial animation for text elements
 document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll('h3, h4, h2'); 
     elements.forEach((el, index) => {
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Portfolio items animation
 document.addEventListener('DOMContentLoaded', function() {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Slide-in animation handler
 document.addEventListener('DOMContentLoaded', function() {
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -52,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleAnimation);
 });
 
+// Image fade-in observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -65,6 +69,7 @@ const observer = new IntersectionObserver((entries) => {
 const images = document.querySelectorAll('.shap');
 images.forEach(img => observer.observe(img));
 
+// Navigation buttons handling
 const toTopBtn = document.getElementById('toTopBtn');
 const backBtn = document.getElementById('backBtn');
 
@@ -89,7 +94,7 @@ backBtn.addEventListener('click', () => {
     window.history.back();
 });
 
-// Updated Carousel functionality with header management
+// Enhanced carousel functionality with high-resolution support
 const carouselContainer = document.querySelector('.carousel-container');
 const carouselImage = document.querySelector('.carousel-image');
 const prevBtn = document.querySelector('.prev-btn');
@@ -113,18 +118,31 @@ function closeCarousel() {
     header.style.zIndex = '1020';
 }
 
+// Updated carousel image handling with high-resolution support
+function updateCarousel() {
+    const currentImage = images[currentIndex];
+    // First show the low-res version immediately
+    carouselImage.src = currentImage.src;
+    
+    // Then load the high-res version if available
+    const highResSrc = currentImage.dataset.fullRes;
+    if (highResSrc) {
+        const highResImage = new Image();
+        highResImage.onload = function() {
+            carouselImage.src = highResSrc;
+        };
+        highResImage.src = highResSrc;
+    }
+}
+
 images.forEach((img, index) => {
     img.addEventListener('click', () => {
         currentIndex = index;
         updateCarousel();
         carouselContainer.classList.add('active');
-        openCarousel(); // Added header management
+        openCarousel();
     });
 });
-
-function updateCarousel() {
-    carouselImage.src = images[currentIndex].src;
-}
 
 function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
@@ -140,7 +158,7 @@ nextBtn.addEventListener('click', nextImage);
 prevBtn.addEventListener('click', prevImage);
 closeBtn.addEventListener('click', () => {
     carouselContainer.classList.remove('active');
-    closeCarousel(); // Added header management
+    closeCarousel();
 });
 
 document.addEventListener('keydown', (e) => {
@@ -150,6 +168,6 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') prevImage();
     if (e.key === 'Escape') {
         carouselContainer.classList.remove('active');
-        closeCarousel(); // Added header management
+        closeCarousel();
     }
 });

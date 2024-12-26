@@ -189,13 +189,13 @@ hr{
     transform: translateX(-50%); /* Adjust to center */
     width: 100%; /* Make the text span the width of the image */
     color: white;
-    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
     padding: 10px 0; /* Add padding around the text */
     opacity: 1; /* Hide text by default */
     transition: opacity 0.3s ease-in-out;
+
   }
   
 
@@ -276,7 +276,7 @@ hr{
     }
 
     .overlay-text {
-        font-size: 1.2rem;
+        font-size: 0.5rem;
     }
 
     .portfolio-item {
@@ -288,9 +288,8 @@ hr{
 
     }
     header {
-        
         width: 100%;
-        /* top: 0; */
+        top: 0;
         z-index: 1000;
         background-color: rgba(0, 0, 0, 1) !important; /* Added more opacity for better visibility while scrolling */
     }
